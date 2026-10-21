@@ -14,7 +14,7 @@ def analyze_logs():
             for line in file:
                 parts = line.split()
 
-                if len(parts) >= 2 and parts[0] == "FAILED":
+                if len(parts) >= 4 and "FAILED" in parts:
                     ip_address = parts[-1]
                     failed_ips[ip_address] += 1
 
